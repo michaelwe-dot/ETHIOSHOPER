@@ -54,11 +54,6 @@ jobs:
           keyAlias=${{ secrets.KEY_ALIAS }}
           EOF
 
-      - name: Build AAB
-        run: |
-          cd flutter_app
-          flutter build appbundle --release
-
       - name: Build APK
         run: |
           cd flutter_app
@@ -70,4 +65,3 @@ jobs:
           name: ethioshoper-builds
           path: |
             flutter_app/build/app/outputs/flutter-apk/app-release.apk
-            flutter_app/build/app/outputs/bundle/release/app-release.aab
