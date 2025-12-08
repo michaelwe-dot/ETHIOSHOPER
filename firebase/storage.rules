@@ -1,36 +1,19 @@
-// ===============================
-// ETHIOSHOPER Firebase Storage Security Rules
-// ===============================
-
 rules_version = '2';
-
 service firebase.storage {
   match /b/{bucket}/o {
-
-    // Allow thumbnails/public listings read
     match /thumbnails/{file} {
       allow read: if true;
     }
-
-    // Listing images
     match /listing_images/{file} {
-      // Anyone can read listing images
       allow read: if true;
-
-      // Must be authenticated to upload
       allow write: if request.auth != null;
     }
-
-    // Chat images
     match /chat_images/{file} {
-      // Chat images can only be read/write by chat members
       allow read, write: if request.auth != null;
     }
-
-    // Default rule
     match /{allPaths=**} {
       allow read: if request.auth != null;
-      allow write: if false;  // Disable public writes
+      allow write: if false;
     }
   }
 }
