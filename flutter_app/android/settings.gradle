@@ -5,6 +5,14 @@ pluginManagement {
         mavenCentral()
     }
 }
+
+plugins {
+    // Flutter automatically provides the correct version internally
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+include(":app")
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
     repositories {
@@ -13,5 +21,3 @@ dependencyResolutionManagement {
         jcenter() // if needed
     }
 }
-rootProject.name = "ethioshoper"
-include ':app'
