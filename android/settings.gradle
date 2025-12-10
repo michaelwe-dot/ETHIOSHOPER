@@ -1,0 +1,38 @@
+pluginManagement {
+    def flutterSdkPath = {
+        def properties = new Properties()
+        file("local.properties").withInputStream { properties.load(it) }
+        def flutterSdkPath = properties.getProperty("flutter.sdk")
+        assert flutterSdkPath != null : "flutter.sdk not set in local.properties"
+        return flutterSdkPath
+    }()
+    
+    // Include the Flutter Gradle plugin loader
+    includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
+    
+    // Define repositories for fetching Gradle plugins
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+// Define plugins that are used in the project (like Android application, Kotlin, etc.)
+plugins {
+    id "dev.flutter.flutter-plugin-loader" version "1.0.0"
+    id "com.android.application" version "8.1.0" apply false // Use your AGP version
+    id "org.jetbrains.kotlin.android" version "1.8.10" apply false // Use your Kotlin version
+}
+
+// 🔑 THE CRITICAL LINE THAT FIXES YOUR ERROR:
+include ':app'
+
+// This section is for plugins used by the Flutter app itself
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
