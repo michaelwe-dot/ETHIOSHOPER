@@ -1,0 +1,46 @@
+name: ethio_shop
+description: The ETHIO🛍 Adaptive Marketplace application.
+publish_to: 'none' # Prevents accidental publishing to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # 🎨 UI Icons
+  cupertino_icons: ^1.0.6
+
+  # 🔑 Firebase Core Packages
+  # These are required to connect your app to the Firebase Console
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.15.2
+  cloud_firestore: ^4.13.5
+  firebase_storage: ^11.5.6
+
+  # 🗺 Location and Maps
+  # Required for the Cars and Property map views
+  google_maps_flutter: ^2.5.0
+  geolocator: ^10.1.0
+
+  # 💬 UI Utilities & Media
+  image_picker: ^1.0.4          # To upload photos for listings
+  cached_network_image: ^3.3.0  # To load images faster and save data
+  intl: ^0.18.1                 # For date formatting (e.g., "Posted 2 hrs ago")
+  url_launcher: ^6.2.2          # For the "Call Seller" button
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+
+  # 🖼 Assets Section
+  # Make sure you create an 'assets' folder in your project root if you use this!
+  # assets:
+  #   - assets/images/

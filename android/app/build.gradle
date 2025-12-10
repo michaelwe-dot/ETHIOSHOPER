@@ -1,0 +1,65 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // Apply the Google Services plugin here as well
+    id "com.google.gms.google-services"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    // Setting the application ID to match the one in your google-services.json
+    namespace "com.ethio.shop" 
+    compileSdk flutter.compileSdkVersion
+
+    defaultConfig {
+        // Set your application ID
+        applicationId "com.ethio.shop"
+        
+        // Minimum SDK version set to 21 for modern Flutter/Firebase/Google Maps support
+        minSdkVersion 21 
+        targetSdkVersion flutter.targetSdkVersion
+        versionCode flutter.versionCode.toInteger()
+        versionName flutter.versionName
+
+        // Enable MultiDex for larger apps (common with Firebase)
+        multiDexEnabled true
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    // MultiDex support
+    implementation 'androidx.multidex:multidex:2.0.1'
+    
+    // Kotlin standard library dependency
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    
+    // Dependencies are automatically injected by Flutter
+}
