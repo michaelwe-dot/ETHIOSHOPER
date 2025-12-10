@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:connectivity_plus/connectivity_plus.dart'; // Fixed import
-import 'package:lottie/lottie.dart'; // Fixed import
+//import 'package:lottie/lottie.dart'; // Fixed import
 import 'dart:async';
 
 class SplashScreen extends StatefulWidget {
