@@ -1,40 +1,54 @@
-# ===============================
-# Flutter
-# ===============================
-**/build/
-**/.dart_tool/
-**/.packages
-**/.flutter-plugins*
-**/.metadata
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
 
-# Flutter app
-flutter_app/build/
-flutter_app/.dart_tool/
-flutter_app/.idea/
-flutter_app/.vscode/
-flutter_app/ios/
-flutter_app/.packages
-flutter_app/pubspec.lock
+# IntelliJ / Android Studio
+*.iml
+*.ipr
+*.iws
+.idea/
 
-# Android (inside flutter app)
-flutter_app/android/.gradle/
-flutter_app/android/.idea/
-flutter_app/android/local.properties
-flutter_app/android/app/release/
-flutter_app/android/key.properties
-flutter_app/android/app/ethio.keystore
+# Visual Studio Code
+.vscode/
 
-# iOS (if added later)
-flutter_app/ios/.generated/
-flutter_app/ios/Pods/
-flutter_app/ios/.symlinks/
-flutter_app/ios/Flutter/Flutter.framework/
-flutter_app/ios/Flutter/App.framework/
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+.pub-cache/
+.pub/
 
-# ===============================
-# Firebase & Functions
-# ===============================
-functions/node_modules/
+# Android
+android/local.properties
+android/gradle/wrapper/gradle-wrapper.properties
+android/.gradle
+android/captures/
+android/gradlew
+android/gradlew.bat
+
+# iOS
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/app.flx
+ios/Flutter/app.zip
+ios/Flutter/fonts/
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Podfile.lock
+ios/Pods/
+
+# Firebase - OPTIONAL
+# Uncomment the line below if your repo is PUBLIC and you want to hide your config
+# android/app/google-services.jsonfunctions/node_modules/
 functions/.env
 serviceAccount.json
 
