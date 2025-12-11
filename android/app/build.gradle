@@ -1,4 +1,4 @@
-⁸plugins {
+plugins {
     id "com.android.application"
     id "kotlin-android"
     // Apply the Google Services plugin here as well
