@@ -1,4 +1,4 @@
-plugins {
+⁸plugins {
     id "com.android.application"
     id "kotlin-android"
     // Apply the Google Services plugin here as well
@@ -16,7 +16,7 @@ android {
         applicationId "com.ethio.shop"
         
         // Minimum SDK version set to 21 for modern Flutter/Firebase/Google Maps support
-        minSdkVersion 21 
+        minSdkVersion 36
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutter.versionCode.toInteger()
         versionName flutter.versionName
@@ -41,12 +41,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_2_1 
+        targetCompatibility JavaVersion.VERSION_2_1
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '2.1'
     }
 }
 
