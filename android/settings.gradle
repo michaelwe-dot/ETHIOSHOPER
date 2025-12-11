@@ -29,12 +29,3 @@ plugins {
 }
 
 include ':app'
-
-// This section is for plugins used by the Flutter app itself
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
