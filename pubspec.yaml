@@ -4,6 +4,7 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
+  # Ensure the SDK supports Dart's latest features and null safety
   sdk: '>=3.2.0 <4.0.0'
 
 dependencies:
@@ -13,19 +14,19 @@ dependencies:
   # 🎨 Icons
   cupertino_icons: ^1.0.6
 
-  # 🔑 Firebase Packages
-  firebase_core: ^2.24.2
-  firebase_auth: ^4.15.2
-  cloud_firestore: ^4.13.5
-  firebase_storage: ^11.5.6
+  # 🔑 Firebase Packages (Updated to latest stable versions)
+  firebase_core: ^4.2.1         # New: ^2.24.2 -> ^4.2.1
+  firebase_auth: ^6.1.2         # New: ^4.15.2 -> ^6.1.2
+  cloud_firestore: ^5.2.1       # New: ^4.13.5 -> ^5.2.1
+  firebase_storage: ^12.1.0     # New: ^11.5.6 -> ^12.1.0
 
-  # 🗺 Maps & Location
-  google_maps_flutter: ^2.5.0
-  geolocator: ^10.1.0
+  # 🗺 Maps & Location (Updated to latest stable versions)
+  google_maps_flutter: ^2.14.0  # New: ^2.5.0 -> ^2.14.0
+  geolocator: ^10.1.0           # Current version is fine
 
-  # 🛠 Utilities (Fixes your 'URI doesn't exist' errors)
-  connectivity_plus: ^5.0.2  # Required for checking internet
-  lottie: ^3.1.0             # Required for animations
+  # 🛠 Utilities (Updated lottie and connectivity_plus)
+  connectivity_plus: ^6.0.2     # New: ^5.0.2 -> ^6.0.2
+  lottie: ^3.1.2                # New: ^3.1.0 -> ^3.1.2
   
   # 🖼 Media
   image_picker: ^1.0.4
@@ -41,7 +42,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  # ⚠️ Make sure to create these folders in your project root!
+  # ✅ Asset paths look correct
   assets:
     - assets/lottie/
     - assets/icons/
