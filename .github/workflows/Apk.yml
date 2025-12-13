@@ -27,6 +27,16 @@ jobs:
           distribution: 'temurin'
           # Caches Gradle dependencies for speed
           cache: 'gradle'
+          # ... (After Set up JDK 21 step)
+
+      # 4. CREATE DEBUG KEY: Manually generate the debug.keystore to satisfy Gradle's validation
+      - name: Generate Dummy Debug Keystore
+        run: |
+          mkdir -p android/app
+          keytool -genkey -v -keystore android/app/debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+        shell: bash
+
+# ... (The rest of your steps, including the release key injection)
 
       # 4. SETUP FLUTTER: Sets up the Flutter SDK
       - name: Set up Flutter
