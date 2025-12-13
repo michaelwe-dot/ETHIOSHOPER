@@ -26,7 +26,3 @@ allprojects {
     }
 }
 
-// Cleans the build directory when you run `gradle clean`
-tasks.register('clean', Delete) {
-    delete rootProject.buildDir
-}
